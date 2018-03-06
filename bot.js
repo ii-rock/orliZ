@@ -22,7 +22,7 @@ let prefix = '!';
 
 client.on('loggedOn', function(details) {
 	client.chatMessage(process.env.ID, "Connected to steam servers.");
-	
+	client.setPersona(SteamUser.EPersonaState.Online);
 	client.gamesPlayed(570);
 });
 
@@ -49,7 +49,7 @@ client.on('friendMessage', function(steamID, message) {
 	switch (args[0].toLowerCase()) {
 		case "setname":
 			if (!theMsg) return client.chatMessage(steamID, 'Cannot set my username to empty!')
-			client.setPersona(SteamUser.Steam.EPersonaState.Online, theMsg);
+			client.setPersona(SteamUser.EPersonaState.Online, theMsg);
 			client.chatMessage(steamID, `My username has been successfully changed to ${theMsg}`)
 			break;
 		case "play":
