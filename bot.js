@@ -21,7 +21,6 @@ let prefix = '!';
 
 
 client.on('loggedOn', function(details) {
-	client.chatMessage(process.env.ID, "Connected to steam servers.");
 	client.setPersona(SteamUser.EPersonaState.Online);
 	client.gamesPlayed(570);
 });
